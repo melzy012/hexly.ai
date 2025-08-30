@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PulseScout — $100K/mo products, delivered to your Telegram</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-900">
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <header class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold">PulseScout</h1>
+      <a href="/dashboard" class="underline">Dashboard</a>
+    </header>
+
+    <section class="mt-16">
+      <h2 class="text-4xl font-extrabold leading-tight">Your next $100K/mo product, delivered to Telegram.</h2>
+      <p class="mt-4 text-lg">We scan 1,000+ stores & ads daily to surface winners before they saturate. Plus, Telegram AI for customer chat.</p>
+      <div class="mt-8 flex gap-3">
+        <a href="https://t.me/PulseScoutBot" class="px-5 py-3 rounded-xl bg-black text-white">Start free trial in Telegram</a>
+        <a href="#pricing" class="px-5 py-3 rounded-xl border">See pricing</a>
+      </div>
+    </section>
+
+    <section id="proof" class="mt-16 grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-2xl shadow">Real-time winners feed</div>
+      <div class="p-6 bg-white rounded-2xl shadow">Competitor alerts</div>
+      <div class="p-6 bg-white rounded-2xl shadow">24/7 customer chat</div>
+    </section>
+
+    <section id="pricing" class="mt-16 p-8 bg-white rounded-2xl shadow">
+      <h3 class="text-2xl font-bold">Pricing</h3>
+      <p class="mt-2">Simple: <strong>$3,500/month</strong> per store. Cancel anytime.</p>
+      <div class="mt-6 flex gap-3">
+        <a href="https://t.me/PulseScoutBot" class="px-5 py-3 rounded-xl bg-black text-white">Start free trial</a>
+        <a id="checkout-btn" class="px-5 py-3 rounded-xl border" href="#">Checkout</a>
+      </div>
+      <p class="text-sm mt-2">International via Lemon Squeezy. South Africa via Paystack.</p>
+    </section>
+
+    <footer class="mt-20 text-sm text-gray-500">© hexly.ai</footer>
+  </main>
+<script>
+// replaced dynamically by Worker: it's okay if this is empty for now
+</script>
+</bodPulseScout
