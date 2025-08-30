@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PulseScout Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head><body class="bg-gray-50">
+<main class="max-w-6xl mx-auto px-6 py-8">
+  <header class="flex items-center justify-between">
+    <h1 class="text-2xl font-bold">PulseScout Dashboard</h1>
+    <a href="https://t.me/PulseScoutBot" class="underline">Open Telegram</a>
+  </header>
+  <section id="welcome" class="mt-6 p-6 bg-white rounded-2xl shadow">
+    <h2 class="text-xl font-semibold">Welcome</h2>
+    <p id="userline" class="mt-2 text-gray-600">Loading…</p>
+  </section>
+  <section id="products" class="mt-6 p-6 bg-white rounded-2xl shadow">
+    <h2 class="text-xl font-semibold">Today’s Winners</h2>
+    <div id="grid" class="mt-4 grid md:grid-cols-3 gap-4"></div>
+  </section>
+</main>
+<script>
+(async () => {
+  const qs = new URLSearchParams(location.search);
+  const token = qs.get('token');
+  const res = await fetch(`https://api.pulsescout.workers.dev/dashboard?token=${encodeURIComponent(token||'')}`);
+  const data = await res.json();
+  document.getElementById('userline').textContent = `Hello ${data.user?.name||'Guest'} — ${data.subscription?.status||'trial'}`;
+  const grid = document.getElementById('grid');
+  data.products?.forEach(p=>{
+    const el = document.createElement('div');
+    el.className='p-4 border rounded-xl';
+    el.innerHTML = `<div class="font-semibold">${p.title}</div>
+    <div class="text-sm text-gray-500">Store: ${p.source}</div>
+    <a class="text-sm underline" target="_blank" href="${p.url}">View</a>`;
+    grid.appendChild(el);
+  });
+})();
+</script>
+</body></html>
